@@ -1,0 +1,32 @@
+plugins {
+    id 'application'
+    id 'java'
+    id 'war'
+    id 'org.teavm' version '0.12.3'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation teavm.libs.jsoApis
+}
+
+application {
+    mainClass = 'org.pkg.app.App'
+}
+
+teavm {
+    all {
+        mainClass = 'org.pkg.app.App'
+    }
+    js {
+        addedToWebApp = true
+        targetFileName = 'app.js'
+    }
+    wasmGC {
+        addedToWebApp = true
+        targetFileName = 'app.wasm'
+    }
+}
