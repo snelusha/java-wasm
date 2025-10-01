@@ -13,7 +13,8 @@ The build output `app.war` will be located in the `app/build/libs` directory.
 To extract the contents of the WAR file:
 
 ```bash
-jar -xvf app/build/libs/app.war
+cd app/build/libs
+jar -xvf app.war
 ```
 
 ## Running the Development Server
@@ -21,7 +22,7 @@ jar -xvf app/build/libs/app.war
 Start a live development server using either `bunx` or `npx`:
 
 ```bash
-bunx live-server app/build/libs --port=8080 --open=./app/build/libs/index.html
+bunx live-server .
 
-npx live-server app/build/libs --port=8080 --open=./app/build/libs/index.html
+npx live-server .
 ```
