@@ -17,6 +17,31 @@ application {
     mainClass = 'org.pkg.app.App'
 }
 
+def patchSourceDir = file('/Users/sithi/sandbox/java-wasm/app-patch/src/main/java')
+def projectSourceDir = file('src/main/java')
+
+def patchFiles = fileTree(patchSourceDir).files.collect { file ->
+    patchSourceDir.toPath().relativize(file.toPath()).toString()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = []
+
+            srcDir patchSourceDir
+
+            srcDir projectSourceDir
+            exclude { fileTreeElement ->
+                def relativePath = projectSourceDir.toPath()
+                    .relativize(fileTreeElement.file.toPath())
+                    .toString()
+                patchFiles.contains(relativePath)
+            }
+        }
+    }
+}
+
 teavm {
     all {
         mainClass = 'org.pkg.app.App'

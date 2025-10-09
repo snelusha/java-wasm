@@ -4,12 +4,11 @@ public class App {
     public static void main(String[] args) {
         System.out.println("Hello, World!");
 
-        if (false) {
-            Foo foo = new Foo();
-            int result = foo.sum(5, 10);
+        Foo foo = new Foo();
 
-            System.out.println(result);
+        Point p = new Point(3, 4);
 
-        }
+        foo.printPoint(p);
+        foo.printPoint(Point.getZero());
     }
 }

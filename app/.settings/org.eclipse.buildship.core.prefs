@@ -1,11 +1,11 @@
-arguments=--init-script /home/sithi/.cache/jdtls/config/org.eclipse.osgi/58/0/.cp/gradle/init/init.gradle
+arguments=--init-script /Users/sithi/.cache/jdtls/config/org.eclipse.osgi/59/0/.cp/gradle/init/init.gradle
 auto.sync=false
 build.scans.enabled=false
 connection.gradle.distribution=GRADLE_DISTRIBUTION(VERSION(8.9))
-connection.project.dir=
+connection.project.dir=..
 eclipse.preferences.version=1
 gradle.user.home=
-java.home=/usr/lib/jvm/java-21-openjdk-amd64
+java.home=/Library/Java/JavaVirtualMachines/graalvm-community-openjdk-21.0.2+13.1/Contents/Home
 jvm.arguments=
 offline.mode=false
 override.workspace.settings=true
